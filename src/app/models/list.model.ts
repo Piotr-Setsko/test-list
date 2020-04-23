@@ -1,4 +1,4 @@
-export interface ListResponse {
+interface ListResponse {
   basepath: string;
   data: DataListItems[];
 }
@@ -9,3 +9,5 @@ interface DataListItems {
   shortInfo: string;
   more: string;
 }
+
+export { ListResponse, DataListItems };
