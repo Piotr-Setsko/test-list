@@ -1,5 +1,10 @@
-<p>item-detail works!</p>
-<p *ngIf="itemData !== null">{{items[itemData.id - 11].name}}</p>
-<p>{{itemData?.id}}</p>
-<p>{{itemData?.bio}}</p>
-<img src="https://mrsoft.by/tz20{{itemData?.pic}}" alt="">
+<div class="detail__wrapper">
+  <div  *ngIf="itemData !== null">
+    <h2 class="detail__title">{{items[itemData.id - 11].name}}</h2>
+    <h3 class="detail__subtitle">{{items[itemData.id - 11].shortInfo}}</h3>
+  </div>
+  <div class="detail__main">
+    <p class="detail__bio">{{itemData?.bio}}</p>
+    <img class="detail__img" src="https://mrsoft.by/tz20{{itemData?.pic}}" alt="Cat" width="220" height="220">
+  </div>
+</div>
