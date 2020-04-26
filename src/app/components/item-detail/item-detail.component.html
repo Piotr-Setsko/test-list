@@ -1,3 +1,5 @@
 <p>item-detail works!</p>
+<p *ngIf="itemData !== null">{{items[itemData.id - 11].name}}</p>
+<p>{{itemData?.id}}</p>
 <p>{{itemData?.bio}}</p>
 <img src="https://mrsoft.by/tz20{{itemData?.pic}}" alt="">

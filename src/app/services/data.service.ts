@@ -38,6 +38,6 @@ export class DataService {
     this.httpClient.get<ItemResponse>(this.listUrl)
       .subscribe(data => this.itemsResp2.next(data));
 
-    return this.httpClient.get<ItemResponse>(this.listUrl)
+    return this.httpClient.get<ItemResponse>(this.listUrl);
   }
 }

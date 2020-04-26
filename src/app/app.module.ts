@@ -11,6 +11,7 @@ import { SearchComponent } from './components/search/search.component';
 
 import { DataService } from './services/data.service';
 import { ItemDetailComponent } from './components/item-detail/item-detail.component';
+import { SearchPipe } from './pipe/search.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ItemDetailComponent } from './components/item-detail/item-detail.compon
     ListComponent,
     ListItemComponent,
     SearchComponent,
-    ItemDetailComponent
+    ItemDetailComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
