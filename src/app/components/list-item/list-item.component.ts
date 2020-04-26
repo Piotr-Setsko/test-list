@@ -20,24 +20,30 @@ export class ListItemComponent implements OnInit {
   public listUrl:string;
   public detailData:ItemResponse;
   public btn: string = 'X';
-  //public disable: boolean = false;
+  public disable: boolean = false;
+  public date: Date;
 
   constructor(private data: DataService, private render:Renderer2) { }
 
+  public addDate() {
+    this.disable = !this.disable;
+    this.date = new Date();
+  }
+
   public activated(item, event): void {
     const currentItem = event.target.parentElement.parentElement;
+    this.btn = (this.btn == 'X') ? 'R' : 'X';
 
     if (!currentItem.classList.contains('isDisabled')) {
-      this.btn = 'R';
       this.render.addClass(currentItem,'isDisabled');
       this.items.push(this.items.splice(this.items.indexOf(item), 1)[0]);
     } else {
-      this.btn = 'X';
       this.render.removeClass(currentItem,'isDisabled');
       this.items.splice(this.items.indexOf(item), 1);
       this.items.splice((item.id - 11),0, item);
     }
-
+    
+    this.addDate();
     event.stopPropagation();
   }
 

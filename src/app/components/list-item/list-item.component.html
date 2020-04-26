@@ -1,6 +1,7 @@
 <div>
 <span>{{item.name}}</span>
 <button (click)="activated(item, $event)">{{btn}}</button>
-<p style="color:red">{{item.shortInfo}}</p>
+<p  *ngIf="!disable" style="color:red">{{item.shortInfo}}</p>
+<p *ngIf="disable">deleted at {{date | date: 'dd.MM.yy'}} @ {{date | date: 'HH:mm'}}</p>
 </div>
 

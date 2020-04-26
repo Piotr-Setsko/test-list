@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data.service';
+import { ItemResponse } from '../../models/item.model';
+
 
 @Component({
   selector: 'app-item-detail',
@@ -6,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./item-detail.component.scss']
 })
 export class ItemDetailComponent implements OnInit {
+  public itemData: ItemResponse | null;
 
-  constructor() { }
+  constructor(public data: DataService) { }
 
   ngOnInit(): void {
+    this.data.searchItemDeatil(11).subscribe(
+      result => this.itemData = result
+    );
+    this.data.currentItemResp.subscribe(result => this.itemData = result);
   }
-
 }
