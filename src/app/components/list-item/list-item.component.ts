@@ -37,12 +37,14 @@ export class ListItemComponent implements OnInit {
     if (!currentItem.classList.contains('isDisabled')) {
       this.render.addClass(currentItem,'isDisabled');
       this.items.push(this.items.splice(this.items.indexOf(item), 1)[0]);
+      console.log(this.items.indexOf(item))
     } else {
       this.render.removeClass(currentItem,'isDisabled');
       this.items.splice(this.items.indexOf(item), 1);
       this.items.splice((item.id - 11),0, item);
+      console.log('ho')
     }
-    
+
     this.addDate();
     event.stopPropagation();
   }
