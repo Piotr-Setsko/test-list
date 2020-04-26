@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+import { ItemResponse } from '../models/item.model';
 import { ListResponse, DataListItems } from '../models/list.model';
 
 @Injectable({
@@ -24,5 +25,13 @@ export class DataService {
         return data;
       })
     );
+  }
+
+  public searchItemDeatil(id): void{
+    this.listUrl =
+    'https://cors-anywhere.herokuapp.com/https://mrsoft.by/tz20/cats/'+ id +'.json';
+
+    this.httpClient.get<ItemResponse>(this.listUrl)
+      .subscribe(data => console.log(data));
   }
 }

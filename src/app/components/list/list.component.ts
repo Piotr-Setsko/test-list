@@ -9,11 +9,27 @@ import { DataListItems } from '../../models/list.model';
 })
 export class ListComponent implements OnInit {
   public items: DataListItems[];
+  public item: DataListItems;
+  public selectItem: DataListItems;
+
+  public isDisabled: boolean = false;
+  clickItem;
 
   constructor(private data: DataService) { }
 
-  ngOnInit(): void {
-    this.data.searchYoutube().subscribe(data => this.items = data);
+  public select(item: DataListItems, event): void {
+    this.data.searchItemDeatil(item.id);
+    if (!event.currentTarget.classList.contains('isDisabled')) {
+      this.selectItem = item;
+    }
   }
 
+  ngOnInit(): void {
+    this.data.searchYoutube()
+    .subscribe(
+      data => {
+        this.items = data;
+        this.selectItem = this.items[0];
+    })
+  }
 }

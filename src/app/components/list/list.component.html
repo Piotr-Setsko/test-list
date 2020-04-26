@@ -1,2 +1,2 @@
 <p>list works!</p>
-<app-list-item class="search__item" *ngFor="let item of items" [item]="item"></app-list-item>
+<app-list-item class="search__item" *ngFor="let item of items; let i = index" [class.active]="item === selectItem" [item]="item" [items]="items" (click)="select(item, $event)"></app-list-item>

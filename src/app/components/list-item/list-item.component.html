@@ -1,4 +1,6 @@
-<hr>
-<p>{{item.name}}</p>
+<div>
+<span>{{item.name}}</span>
+<button (click)="activated(item, $event)">{{btn}}</button>
 <p style="color:red">{{item.shortInfo}}</p>
+</div>
 

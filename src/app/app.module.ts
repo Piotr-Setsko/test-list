@@ -10,13 +10,15 @@ import { ListItemComponent } from './components/list-item/list-item.component';
 import { SearchComponent } from './components/search/search.component';
 
 import { DataService } from './services/data.service';
+import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     ListItemComponent,
-    SearchComponent
+    SearchComponent,
+    ItemDetailComponent
   ],
   imports: [
     BrowserModule,
