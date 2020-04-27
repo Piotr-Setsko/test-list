@@ -12,15 +12,13 @@ export class ListComponent implements OnInit {
   public items: DataListItems[];
   public item: DataListItems;
   public selectItem: DataListItems;
-  public wordSort: string = '';
+  public wordSort = '';
 
-  public isDisabled: boolean = false;
-  clickItem;
+  public isDisabled = false;
 
   constructor(private data: DataService, private searchService: SearchService) {
     this.searchService.wordSorting.subscribe(wordSort => this.wordSort = wordSort);
-   }
-
+  }
 
   public select(item: DataListItems, event): void {
     if (!event.currentTarget.classList.contains('isDisabled')) {
@@ -36,12 +34,7 @@ export class ListComponent implements OnInit {
       data => {
         this.items = data;
         this.selectItem = (sessionStorage.active === undefined)
-          ? this.items[0]: this.items[+sessionStorage.active - 11];
-        //if (sessionStorage.active === undefined) {
-        //  this.selectItem = this.items[0];
-        //} else {
-
-        //}
-    })
+          ? this.items[0] : this.items[+sessionStorage.active - 11];
+    });
   }
 }

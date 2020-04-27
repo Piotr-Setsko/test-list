@@ -33,7 +33,7 @@ export class DataService {
 
   public searchItemDeatil(id): Observable<ItemResponse> {
     this.listUrl =
-    'https://cors-anywhere.herokuapp.com/https://mrsoft.by/tz20/cats/'+ id +'.json';
+    'https://cors-anywhere.herokuapp.com/https://mrsoft.by/tz20/cats/' + id + '.json';
 
     this.httpClient.get<ItemResponse>(this.listUrl)
       .subscribe(data => this.itemsResp2.next(data));
