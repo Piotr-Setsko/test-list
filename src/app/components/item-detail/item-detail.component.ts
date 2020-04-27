@@ -19,9 +19,9 @@ export class ItemDetailComponent implements OnInit {
   ngOnInit(): void {
     this.data.searchYoutube().subscribe(result => {
       this.items = result;
-
     });
-    this.data.searchItemDeatil(11).subscribe(
+
+    this.data.searchItemDeatil(sessionStorage.active || 11).subscribe(
       result => {
         this.itemData = result;
       }
@@ -30,7 +30,5 @@ export class ItemDetailComponent implements OnInit {
     this.data.currentItemResp.subscribe(result => {
       this.itemData = result;
     });
-
-    //this.item = this.items[(this.itemData.id - 11) || 0];
   }
 }

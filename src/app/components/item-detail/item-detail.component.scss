@@ -13,7 +13,7 @@
   padding-left: 13%;
   font-size: 3vw;
   font-style: italic;
-  border-bottom: 3px solid #3f51b5;
+  border-bottom: 3px solid rgba(63,81,181,1);
 }
 
 .detail__bio {
@@ -31,4 +31,26 @@
 .detail__img {
   border-radius: 5px;
   object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .detail__main {
+    flex-direction: column;
+  }
+
+  .detail__img {
+    order: -1;
+   margin: 0 auto 20px;
+   overflow: hidden;
+  }
+
+  .detail__title {
+    margin: 30px 10% 20px;
+    font-size: 20px;
+  }
+
+  .detail__subtitle {
+    margin: 10px 0;
+    font-size: 14px;
+  }
 }

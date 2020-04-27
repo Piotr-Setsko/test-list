@@ -1,11 +1,13 @@
-<div>
-<mat-card>
-  <mat-card-title>{{item.name}}</mat-card-title>
-  <mat-card-actions>
-    <button (click)="activated(item, $event)">{{btn}}</button>
-  </mat-card-actions>
-<mat-card-content *ngIf="!disable" style="color:red">{{item.shortInfo}}</mat-card-content>
-<mat-card-content *ngIf="disable">deleted at {{date | date: 'dd.MM.yy'}} @ {{date | date: 'HH:mm'}}</mat-card-content>
-</mat-card>
+<div class="item__wrapper">
+  <mat-card>
+    <div class="item__top">
+      <mat-card-title>{{item.name}}</mat-card-title>
+      <mat-card-actions>
+        <button class="item__button" (click)="activated(item, $event)">{{btn}}</button>
+      </mat-card-actions>
+    </div>
+    <mat-card-content *ngIf="!disable">{{item.shortInfo}}</mat-card-content>
+    <mat-card-content *ngIf="disable">deleted at {{date | date: 'dd.MM.yy'}} @ {{date | date: 'HH:mm'}}</mat-card-content>
+  </mat-card>
 </div>
 

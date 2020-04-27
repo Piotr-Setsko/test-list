@@ -22,6 +22,7 @@ export class ListItemComponent implements OnInit {
   public btn: string = 'X';
   public disable: boolean = false;
   public date: Date;
+  public arr: Array<number> = [];
 
   constructor(private data: DataService, private render:Renderer2) { }
 
@@ -31,18 +32,17 @@ export class ListItemComponent implements OnInit {
   }
 
   public activated(item, event): void {
-    const currentItem = event.target.parentElement.parentElement;
+    const currentItem = event.target.parentElement.parentElement.parentElement.parentElement.parentElement;
     this.btn = (this.btn == 'X') ? 'R' : 'X';
 
     if (!currentItem.classList.contains('isDisabled')) {
       this.render.addClass(currentItem,'isDisabled');
       this.items.push(this.items.splice(this.items.indexOf(item), 1)[0]);
-      console.log(this.items.indexOf(item))
+      console.log(this.arr);
     } else {
       this.render.removeClass(currentItem,'isDisabled');
       this.items.splice(this.items.indexOf(item), 1);
       this.items.splice((item.id - 11),0, item);
-      console.log('ho')
     }
 
     this.addDate();

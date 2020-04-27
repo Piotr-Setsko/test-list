@@ -1,2 +1,2 @@
-<p>list works!</p>
+<app-search></app-search>
 <app-list-item class="search__item" *ngFor="let item of items | search: wordSort" [class.active]="item === selectItem" [item]="item" [items]="items" (click)="select(item, $event)"></app-list-item>

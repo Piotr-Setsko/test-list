@@ -2,4 +2,44 @@
   text-align: center;
 }
 
+.item__wrapper {
+  width: 80%;
+  margin: 10px auto;
+  border-radius: 10px;
+}
 
+.item__top {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.mat-card-actions {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+}
+
+.item__button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .mat-card-title {
+    font-size: 14px;
+  }
+
+  .item__button {
+    position: absolute;
+    right: -15px;
+    bottom: -5px;
+  }
+
+  .mat-card {
+    position: relative;
+  }
+}

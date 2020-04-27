@@ -23,8 +23,9 @@ export class ListComponent implements OnInit {
 
 
   public select(item: DataListItems, event): void {
-    this.data.searchItemDeatil(item.id);
     if (!event.currentTarget.classList.contains('isDisabled')) {
+      sessionStorage.setItem('active', String(item.id));
+      this.data.searchItemDeatil(item.id);
       this.selectItem = item;
     }
   }
@@ -34,7 +35,13 @@ export class ListComponent implements OnInit {
     .subscribe(
       data => {
         this.items = data;
-        this.selectItem = this.items[0];
+        this.selectItem = (sessionStorage.active === undefined)
+          ? this.items[0]: this.items[+sessionStorage.active - 11];
+        //if (sessionStorage.active === undefined) {
+        //  this.selectItem = this.items[0];
+        //} else {
+
+        //}
     })
   }
 }

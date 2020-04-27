@@ -5,3 +5,9 @@
 .main-list {
   min-width: 25%;
 }
+
+@media (max-width: 600px) {
+  .main-list {
+    width: 35%;
+  }
+}

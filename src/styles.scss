@@ -1,13 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-.active > div {
-  background-color: green;
-  color: blue;
-  border: 1px solid black;
+.active > div > mat-card {
+  background-color: rgba(63,81,181,0.5);
+  color: rgb(43,56,124);
+  border: 1px solid rgba(63,81,181,1);
+
+  .item__button {
+    color: rgb(43,56,124);
+  }
 }
 
-.isDisabled > div {
+.isDisabled > div > mat-card {
   background-color: grey;
   color: black;
+  border: 1px solid darkgray;
+
 }
 
 html, body { height: 100%; }
