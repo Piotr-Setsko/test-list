@@ -12,7 +12,7 @@ export class SearchPipe implements PipeTransform {
 
     if (field !== undefined) {
       items = items.filter(item => {
-        if (item.name.toLowerCase().includes(field)) {
+        if (item.name.toLowerCase().includes(field.toLowerCase())) {
           return item;
         }
       });
